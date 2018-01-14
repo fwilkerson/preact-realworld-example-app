@@ -7,7 +7,7 @@ import dataService from '../../services';
 export default class Home extends Component {
 	state = { articles: [], tags: [] }
 
-	getArticlesByTag = tag => e => {
+	tagSelected = tag => e => {
 		dataService.getArticlesBy({ tag, limit: 5 })
 			.then(data => this.setState({ articles: data.articles }));
 	}
@@ -37,7 +37,7 @@ export default class Home extends Component {
 			<p>Popular Tags</p>
 
 			<div class="tag-list">
-				{tags.map(tag => <Link onClick={this.getArticlesByTag(tag)} class="tag-pill tag-default" href="/">{tag}</Link>)}
+				{tags.map(tag => <Link onClick={this.tagSelected(tag)} class="tag-pill tag-default" href="/">{tag}</Link>)}
 			</div>
 		</div>
 	);

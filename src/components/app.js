@@ -3,6 +3,7 @@ import { Router } from 'preact-router';
 import createHashHistory from 'history/createHashHistory';
 
 import Header from './header';
+import Article from 'async!../routes/article';
 import Home from 'async!../routes/home';
 import Profile from 'async!../routes/profile';
 
@@ -21,6 +22,7 @@ export default class App extends Component {
 			<div id="app">
 				<Header />
 				<Router history={createHashHistory()} onChange={this.handleRoute}>
+					<Article path="/article/:slug" />
 					<Home path="/" />
 					<Profile path="/:username" />
 					<Profile path="/:username/favorites" />

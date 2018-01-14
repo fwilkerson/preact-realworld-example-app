@@ -11,7 +11,10 @@
     "lint": "eslint src"
   },
   "eslintConfig": {
-    "extends": "eslint-config-synacor"
+    "extends": "eslint-config-synacor",
+    "rules": {
+      "react/no-danger": "off"
+    }
   },
   "eslintIgnore": [
     "build/*"
@@ -24,6 +27,7 @@
   },
   "dependencies": {
     "history": "^4.7.2",
+    "marked": "^0.3.12",
     "preact": "^8.2.6",
     "preact-compat": "^3.17.0",
     "preact-router": "^2.5.7"
